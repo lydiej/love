@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @craft.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @craft.description %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @craft.auther %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @craft.pic.url.to_s %>
+</p>
+
+<%= link_to 'Edit', edit_craft_path(@craft) %> |
+<%= link_to 'Back', crafts_path %>

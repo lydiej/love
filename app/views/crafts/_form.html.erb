@@ -1,0 +1,33 @@
+<%= form_for @craft, :html => { :multipart => true } do |f| %>
+  <% if @craft.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@craft.errors.count, "error") %> prohibited this craft from being saved:</h2>
+
+      <ul>
+      <% @craft.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :auther %><br>
+    <%= f.text_field :auther %>
+  </div>
+  <div class="field">
+    <%= f.label :pic, "Upload craft image" %><br>
+    <%= f.file_field :pic %><br /><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

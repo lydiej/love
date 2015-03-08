@@ -1,0 +1,28 @@
+body {
+	background: #FFEFFF !important;
+	padding:30px;
+}
+
+#mainPic img {
+	width:300px;
+	margin-top: 20px;
+	border-radius:6px;
+	box-shadow: 5px 5px 5px #888;
+}
+
+h1 {
+	color:indigo !important;
+	font-size:250% !important;
+}
+.mainPageText {
+	text-align: center;
+	color:violet;
+	font-size:140%;
+}
+g {
+	color:green;
+}
+
+.dropdown-menu-main li a {
+	color: pink !important;
+}
