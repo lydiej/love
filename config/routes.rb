@@ -7,6 +7,9 @@ Love::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'crafts#index'
+   
+   get '/about' => 'pages#about'
+   get '/contact' => 'pages#contact'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
