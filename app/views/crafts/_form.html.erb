@@ -17,11 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :auther %><br>
+    <%= f.label :auther, "Craft creator" %><br>
     <%= f.text_field :auther %>
+  </div>
+  <div class="field">
+    <%= f.label :craft_type_id, "Craft type" %><br>
+    <%= f.select :craft_type_id, CraftType.order("c_type").collect { |s| [(s.c_type), s.id] }, prompt: "Select a craft type" %>
   </div>
   <div class="field">
     <%= f.label :pic, "Upload craft image" %><br>

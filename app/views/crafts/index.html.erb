@@ -3,21 +3,18 @@
 <p class="mainPageText">I am Lydia and the reason I am doing this website is because well I really enjoy crafts and I sometimes need a little help thinking of them so I thought I'd make a website with lots of ideas to help you think of a great craft.  But I don't do it alone I have a little help from cousins 
 	Madeleine, and London who I love and enjoy doing crafts with.</p>
 
-	<center><h1>Listing crafts</h1></center>
-
+<h1>Crafts</h1>
+<hr />
 	    <% @crafts.each do |craft| %>
-	<div class="col-md-3">
-	        <center><P><b><%= link_to craft.name, craft %></b></p></center>
-	        <%#= craft.description %>
-	        <%#= craft.auther %>
-	        <p><%= link_to (image_tag craft.pic.url.to_s, :class => "img-responsive" ), craft %></p>
-	        <td><%= link_to 'Show', craft %></td>
-	        <td><%= link_to 'Edit', edit_craft_path(craft) %></td>
-	        <td><%= link_to 'Destroy', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	      </div>
-	    <% end %>
-	  </tbody>
-	</table>
+				<div class="col-md-3">
+				  <center><P><b><%= link_to craft.name, craft %></b></p></center>
+				  <p><%= link_to (image_tag craft.pic.url.to_s, :class => "img-responsive" ), craft %></p>
+				  <% if current_user.has_role? "admin" %>
+				    <td><%= link_to 'Edit', edit_craft_path(craft) %></td>
+				    <td><%= link_to 'Destroy', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				  <% end %>
+			  </div>
+  		<% end %>
 
 	<br>
 	<div class="col-md-12">

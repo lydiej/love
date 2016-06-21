@@ -25,20 +25,7 @@
       <ul class="nav navbar-nav">
         <li><a href="/about">About</a></li>
         <li><a href="/videos">Videos</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Types of Crafts <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-main" role="menu">
-            <li><a href="/origami">Origami</a></li>
-            <li class="divider"></li>
-            <li><a href="/rubberbands">Rubberband Bracelets</a></li>
-            <li><a href="/holidays">holidays</a></li>
-            <li class="divider"></li>
-            <li><a href="/cardboard">cardboard</a></li>
-            <li class="divider"></li>
-            <li><a href="/drawing">drawing</a></li>
-            <li><a href="/painting">Painting</a></li>
-          </ul>
-        </li>
+        <li><%= link_to "Craft types", craft_types_path %>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">

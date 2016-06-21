@@ -14,7 +14,7 @@
   <tbody>
     <% @craft_types.each do |craft_type| %>
       <tr>
-        <td><%= craft_type.c_type %></td>
+        <td><%= link_to craft_type.c_type, craft_type %></td>
         <td><%= craft_type.description %></td>
         <% if current_user.has_role? "admin" %>
           <td><%= link_to 'Show', craft_type %></td>

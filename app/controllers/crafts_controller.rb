@@ -69,6 +69,6 @@ class CraftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def craft_params
-      params.require(:craft).permit(:name, :description, :auther, :image, :pic)
+      params.require(:craft).permit(:name, :description, :auther, :craft_type_id, :image, :pic)
     end
 end

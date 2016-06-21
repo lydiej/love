@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @craft_type.c_type %>
-</p>
+<h1><%= @craft_type.c_type %> </h1>
+<em><%= @craft_type.description %></em>
+<hr />
+<% @craft_type.crafts.each do |craft| %>
+	<div class="col-md-3">
+		<center><P><b><%= link_to craft.name, craft %></b></p></center>
+		<p><%= link_to (image_tag craft.pic.url.to_s, :class => "img-responsive" ), craft %></p>
+		<% if current_user.has_role? "admin" %>
+		  <td><%= link_to 'Edit', edit_craft_path(craft) %></td>
+		  <td><%= link_to 'Destroy', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+	</div>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @craft_type.description %>
-</p>
 
-<%= link_to 'Edit', edit_craft_type_path(@craft_type) %> |
-<%= link_to 'Back', craft_types_path %>
+<% if current_user.has_role? "admin" %>
+	<%= link_to 'Edit', edit_craft_type_path(@craft_type) %> |
+	<%= link_to 'Back', craft_types_path %>
+<% end %>
