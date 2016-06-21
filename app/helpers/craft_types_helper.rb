@@ -1,0 +1,2 @@
+module CraftTypesHelper
+end

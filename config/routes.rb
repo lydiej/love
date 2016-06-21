@@ -1,4 +1,7 @@
 Love::Application.routes.draw do
+  resources :craft_types
+
+  devise_for :users
   get "welcome/index"
   resources :crafts
 
@@ -10,6 +13,7 @@ Love::Application.routes.draw do
    
    get '/about' => 'pages#about'
    get '/contact' => 'pages#contact'
+   get '/admin' => 'pages#admin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

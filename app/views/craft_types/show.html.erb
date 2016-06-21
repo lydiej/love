@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @craft_type.c_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @craft_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_craft_type_path(@craft_type) %> |
+<%= link_to 'Back', craft_types_path %>
