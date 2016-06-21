@@ -9,7 +9,7 @@
 				<div class="col-md-3">
 				  <center><P><b><%= link_to craft.name, craft %></b></p></center>
 				  <p><%= link_to (image_tag craft.pic.url.to_s, :class => "img-responsive" ), craft %></p>
-				  <% if !current_user.nil? && current_user.has_role? "admin" %>
+				  <% if ((!current_user.nil?) && (current_user.has_role? "admin")) %>
 				    <td><%= link_to 'Edit', edit_craft_path(craft) %></td>
 				    <td><%= link_to 'Destroy', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				  <% end %>

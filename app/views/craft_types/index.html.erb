@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to craft_type.c_type, craft_type %></td>
         <td><%= craft_type.description %></td>
-        <% if !current_user.nil? && current_user.has_role? "admin" %>
+        <% if ((!current_user.nil?) && (current_user.has_role? "admin")) %>
           <td><%= link_to 'Show', craft_type %></td>
           <td><%= link_to 'Edit', edit_craft_type_path(craft_type) %></td>
           <td><%= link_to 'Destroy', craft_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,6 +27,6 @@
 </table>
 
 <br>
-<% if !current_user.nil? && current_user.has_role? "admin" %>
+<% if ((!current_user.nil?) && (current_user.has_role? "admin")) %>
 <%= link_to 'New Craft type', new_craft_type_path %>
 <% end %>
