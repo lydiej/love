@@ -1,4 +1,6 @@
-<h1>Admin actions</h1>
-<p><%#= link_to "Manage users", users_path %></p>
-<p><%= link_to "Manage cafts", crafts_path %></p>
-<p><%= link_to "Manage craft types", craft_types_path %></p>
+<% if !current_user.nil? && current_user.has_role? "admin" %>
+	<h1>Admin actions</h1>
+	<p><%#= link_to "Manage users", users_path %></p>
+	<p><%= link_to "Manage cafts", crafts_path %></p>
+	<p><%= link_to "Manage craft types", craft_types_path %></p>
+<% end %>
